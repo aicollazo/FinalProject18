@@ -1,7 +1,7 @@
 print("All You Knead is Love: A Bread Dating Simulator\n")
 name = input("Enter your name!\n")
 
-A = input("Great are you ready to get this bread! Y/N\n")
+A = input("Great are you bready to get this bread! Y/N\n")
 while A not in ['yes', 'y', 'Y', 'Yes']:
   print(f"You're not allowed to say no, {name}")
   A = input()
