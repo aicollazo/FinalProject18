@@ -96,28 +96,41 @@ print(f"DIRK: Anyways, I really could use your help! I need to memorise my lines
 answer = input("""DIRK: Can you help me?
 A: Sorry I can't! Maybe next time
 B: Sure, what do you need me to do?\n""")
-while answer not in ['A', 'B']:
+while answer not in ['A', 'B', 'a', 'b']:
   print("DIRK:Huh?? Come on give me an answer!")
   answer = input()
-if answer == 'A':
+if answer in ['A', 'a']:
     print("Dirk looks dissapointed but hides it with a smile\n")
     print("DIRK: Oh...that's alright, I understand you're busy and all..\n")
     inventory['Hearts']-=1
     print(f"Oh no! Because you dissapointed Dirk you lost one heart!")
     print(f"Hearts: {inventory['Hearts']}")
-if answer == 'B':
+if answer in ['B','b']:
     print("""Dirk starts flailing his arms excitedly.
     DIRK: YAY! Let's get started then!!\n""")
     print("You and Dirk run lines together in the auditorium, chatting during your session. You've always know him to be the shy type but you never expected him to blush as much as he did when you ran romantic scenes.")
     print("DIRK: Thank's again for running lines with me, you're so good to me. Oh! Here!\n")
     inventory['Hot cocoa']+=2
-    print("Dirk gives you two pakcets of hot cocoa! You were such a big help that you gained a heart from the experience!")
+    print("Dirk gives you two packets of hot cocoa! You were such a big help that you gained a heart from the experience!")
     inventory['Hearts']+=1
     print_inventory()
 
 print("You go home and think about the day. It was kind of short, wasn't it? Almost as if the programmer couldn't be bothered to narrate your school day because you're supposed to get busy falling in love. Ok I've said too much now.")
 print("DAY 2...")
-print("You wake up at about 6am. You don't feel rested in the slightest. ")
+wakingup = input("""You wake up at about 6AM. You don't feel rested in the slightest but you're still willing to take on the day! Do you
+A: Hit snooze and sleep for another hour
+B: Get up and ready\n""")
+while wakingup not in ['A', 'B', 'a', 'b']:
+    print(f"You gotta choice something, {name}")
+    wakingup = input()
+if wakingup in ['A', 'a']:
+    print("Yikes. You slept through your second alarm and now you've missed the bus. You decide you can make the run and barely arrive by 7:50, soaked in sweat. However, because you did cardio, you gain a heart!")
+    inventory['Hearts']+=1
+if wakingup in ['B', 'b']:
+    print("You get up on time and prep yourself for the day. You got on your bus on time and were able to walk around the quad for a bit. Suddenly you spot something on the ground. Hey, it's a keychain that screams 'IT WAS ME, DIO!'. You decide to pocket it, maybe it'll come in handy later?")
+    inventory['Keychains']+=1
+
+#level2:meet xavier and naomi
 
 
 
