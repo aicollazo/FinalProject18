@@ -130,6 +130,10 @@ if wakingup in ['B', 'b']:
     print("You get up on time and prep yourself for the day. You got on your bus on time and were able to walk around the quad for a bit. Suddenly you spot something on the ground. Hey, it's a keychain that screams 'IT WAS ME, DIO!'. You decide to pocket it, maybe it'll come in handy later?")
     inventory['Keychains']+=1
 
+c = input("Check out your inventory by pressing 'i'!")
+if c == "i":
+    print_inventory()
+
 #level2:meet xavier and naomi
 
 
