@@ -134,6 +134,49 @@ c = input("Check out your inventory by pressing 'i'!")
 if c == "i":
     print_inventory()
 
+print("Entering the building, you begin walking to your Spanish class while reading a book. You’re incredibly enthralled by your, The Great Gatsby.\n")
+print("You’re enthralled by the reading, truly Fitzgerald has done it again, you think to yourself. You’re so caught up in the description of Gatsby’s smile that you fail to notice the figure running towards you.\n")
+status = input(f"""??? and {name} : AGH!
+Lying across from you is a beautiful naan bread in a suit. You both fell after she ran into you
+???: Hey are you ok??
+A: Yeah, are you alright??
+B: Watch where you’re going, ugh!
+C: Guess you could say I’m falling for you ;)""")
+while status not in ['A', 'a', 'B', 'b', 'C', 'c']:
+    print("Ok edgelord, you’ve gotta have some emotion.")
+    status = input()
+
+if status in ['A', 'a']:
+    print(f"""???: Yeah I’m fine, thanks for asking. Oh here you dropped your book. Good reading choice by the way ;).
+    Realisation suddenly covers her face as she scrambles to pick up her scattered belongings.
+    ???: I’ve got to get going, business conference and all. Name’s Naomi by the way! Bye!
+    She runs off while brushing down her suit. She seemed awfully nice, quite rushed and clumsy. As you fix yourself up before heading to class you notice a slip of paper on the floor. The paper reads ‘SINGH, NAOMI’.
+    {name}: Oh shoot! She must have dropped this. I’ll have to give it to her later. You put the paper in a journal and head off to class.\n""")
+    inventory['Journals']+=1
+if status in [ 'B', 'b']:
+    print(f"""???: Oh sorry then. Oh shoot! I might miss my conference. Sorry again!
+    She runs off while brushing down her suit. She seemed awfully nice, quite rushed and clumsy. As you fix yourself up before heading to class you notice a slip of paper on the floor. The paper reads ‘SINGH, NAOMI’.
+    {name}: Oh shoot! She must have dropped this. I’ll have to give it to her later.
+    You put the paper in a journal and head off to class.\n""")
+    print(" you decided to be rude to Naomi you lose a heart.")
+    inventory['Journals']+=1
+    inventory ['Hearts']-=1
+
+if status in ['C', 'c']:
+    print(f"""???: Hahahahaha
+    She lets out a long laugh though she is blushing through it.
+    ???: Hey you’re the apple of my RYE! ;p
+    She laughs at her own pun, clearly amused with herself.
+    ???: Thanks for that, I’m a little on edge and really needed that laugh. Here, have a keychain for your troubles. Oh shoot I’ve gotta get going! Nice talking to you though, name’s Naomi!
+    She runs off while brushing down her suit. She seemed awfully nice, quite rushed and clumsy. As you fix yourself up before heading to class you notice a slip of paper on the floor. The paper reads ‘SINGH, NAOMI’.
+    {name}: Oh shoot! She must have dropped this. I’ll have to give it to her later.
+    You put the paper in a journal and head off to class.\n""")
+    inventory['Journals']+=1
+    inventory['Hearts']+=1
+    inventory['Keychains']+=1
+
+
+
 #level2:meet xavier and naomi
 
 
