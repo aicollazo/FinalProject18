@@ -1,14 +1,14 @@
-import time
+import time#allows programmer to use "time.sleep()"
 print("All You Knead is Love: A Bread Dating Simulator\n")
 name = input("Enter your name!\n")
 
 A = input("Great are you bready to get this bread! Y/N\n")
-while A not in ['yes', 'y', 'Y', 'Yes']:
+while A not in ['yes', 'y', 'Y', 'Yes']: #player must select option to move forward
   print(f"You're not allowed to say no, {name}")
   A = input()
 print("Let's getis this breadis...\n")
 
-def print_inventory():
+def print_inventory():#function for printing the dictionary "inventory"
     global inventory
     for key in inventory:
         print(f"{key}:{inventory[key]}")
@@ -23,18 +23,13 @@ inventory = {
     'Hearts': 8,
     'Energy': 30
     }
-c = input("Check out your inventory by pressing 'i'!")
-if c == "i":
+
+i = input("Check out your inventory by pressing 'i'!")
+if i == "i":
     print_inventory()
-#for game end:
-#if inventory['Hearts'] == 0:
-    #print("Oh no, you lost so much love that you couldn't bring yourself to go to prom\n")
-    #print("GAME OVER")
 
 
-
-
-class character:
+class character:#class for defining the characters
   def __init__(self, name, year, school, bread, funfacts, alignment):
     self.name = name
     self.year = year
@@ -42,7 +37,7 @@ class character:
     self.bread = bread
     self.funfacts = funfacts
     self.alignment = alignment
-  def describe(self):
+  def describe(self):#function to describe any one character
     print(f"""{self.name}:
     - Year: {self.year}
     - School: {self.school}
@@ -50,19 +45,19 @@ class character:
     - Fun Facts!: {self.funfacts}
     - Alignment: {self.alignment}""")
     return
+
 Dirk = character('Dirk', 11, 'APA', 'Whole grain', 'loves singing, dancing, watching horror movies with some hot cocoa, hanging out with friends by the lake', 'Looks like a cinnamon roll and is one, lawful good')
-JC = character('JC', 12, 'UCT','Croissant', 'loves hanging out at starbucks, best friends with the duolingo owl, enjoys macchiatos and crunching fallen leaves', 'Looks like a cinnamon roll but could kill you, lawful neutral')
-Marie = character('Marie', 12,'AAHS', 'Baguette', 'Super into dermatology, fashion magazines, loves boxing and takes classes at Tiger Bread Schulmann, dog walking', 'Looks like she could kill you, can actually kill you, true neutral ')
 Xavier = character('Xavier', 12,'MHS', 'Cuban', 'loves videogames and cosplay, 80s and 90s hip hop, had his first kiss to Kung Fu Fighting', 'Looks like a cinnamon roll but could kill you, chaotic good')
 Naomi = character('Naomi', 11, 'AIT', 'Naan', 'loves coding, looks darn good in suits, grew up on Studio Ghibli, will love you forever if you get her mango icecream', 'Looks like she could kill you, is actually a cinnamon roll, neutral good')
+#Character descriptions, variables for the character class
 
-
-
+print(".....This is just a demo version! You'll only be meeting 3 out of the 5 available love interests and playing through 3 days! Have fun <3..........")
+time.sleep(10)
 print(f"""Ah UCVTS. An ordinary campus like any other, save for its vocational classes and it being one of the highest ranked schools in bread education.
 That's right.
 Bread education.
 You see, in decades past, a new string of the flu virus was discovered and it for some reason, caused a mutation in bread. This mutation caused them to gain human like features, incuding a functioning brain. Your campus has been one of the few and most notable to accept these bread people into their school. You, dear {name}, have never known a world without these people, especially your best friend Dirk, a whole wheat bread slice.\n""")
-time.sleep(10)
+time.sleep(10)#time.sleep(__) creates a pause of any length in seconds
 print(f"You and him have been friends since you were toddlers and have been inseparable since. You've accompanied eachother to all the school dances and every family function you could think of. Speaking of functions, you've seem to nearly forget about the prom! You and Dirk have been talking about it for a bit and even went shopping together for it but you seem to have forgot to ask someone out. But no worries, I'm sure your charming self will win someone over. The prom is on Saturday which gives you five days to find someone to ask out.\n")
 time.sleep(10)
 print(f"Anyways enough talk of the prom, you promised Dirk that you'd help out with his drama club show, you should probably go try and find him.\n")
@@ -117,7 +112,7 @@ if answer in ['A', 'a']:
     print("Dirk looks dissapointed but hides it with a smile\n")
     time.sleep(2)
     print("DIRK: 'Oh...that's alright, I understand you're busy and all...'\n")
-    inventory['Hearts']-=1
+    inventory['Hearts']-=1 #changes values of an item in the defined dictionary "inventory"
     print(f"Oh no! Because you dissapointed Dirk you lost one heart!")
     print(f"Hearts: {inventory['Hearts']}")
 if answer in ['B','b']:
@@ -144,7 +139,7 @@ while website not in ['A', 'a', 'B', 'b', 'C', 'c']:
 if website in ['A', 'a']:
     print("You decide to use picturegram to check up on some of your favourite accounts. You scroll through a dog blog's newest posts, showing off the cutest little corgi in a pumpkin costume. You decide to send the picture to Dirk.\n")
     time.sleep(5)
-    print("Scrolling through, you get a notification that someone's requested to follow you. Opening it you see a teenage bread, cosplaying a character from your favourite video game. Their username is '@CrumbyCosplay'. You're immediately enamoured and follow back. You spend a few minutes scrolling through their blog admiring their craftsmanship and dedication to the hobby.\n")
+    print("Scrolling through, you get a notification that someone's requested to follow you. Opening it you see a teenage bread, cosplaying a character from your favourite video game. It's famous picturegrammer '@CrumbyCosplay'! You're immediately enamoured and follow back. You spend a few minutes scrolling through their blog admiring their craftsmanship and dedication to the hobby.\n")
     time.sleep(5)
     print("Before you know it, it's 11pm. Like the good student you are, you send Dirk a quick goodnight and get to sleeping.\n")
     print("Because you were so enamoured by the random cosplayer you gained 2 hearts!\n")
@@ -341,8 +336,8 @@ if music in ['C', 'c']:
     print("You were so distracted by the thought of Naomi you nearly miss your stop. You hop off and make your way home.\n")
     time.sleep(5)
 
-c = input("Check out your inventory by pressing 'i'!\n")
-if c == "i":
+i = input("Check out your inventory by pressing 'i'!\n")
+if i == "i":
     print_inventory()
 
 info = input("Check out the bread you met today by pressing 'b'!\n")
@@ -350,5 +345,170 @@ if info == "b":
     Naomi.describe()
     Xavier.describe()
 time.sleep(3)
+
+print("WEDNESDAY, DAY 3...\n")
+time.sleep(3)
+print("AH AH AH AH AH AH")
+time.sleep(3)
+print("Your alarm blares in your ears as you struggle to shut it off. You slam your hand into the snooze button and push yourself off the bed. You notice, for once, that you've woken up on time, 6:00am. You decide this calls for something, a treat perhaps. Making your way to the kitchen you prep yourself breakfast.")
+time.sleep(10)
+breakfast = input("""What will you have?:
+    A: Oatmeal and fruit
+    B: an Omelette
+    C: Beans and toast\n""")
+while breakfast not in ['A', 'a', 'B', 'b', 'C', 'c']:
+    print("You stare at the fridge. Looking at the time, you realise you have about 55 minutes to eat. Please make something.\n")
+    breakfast = input()
+if breakfast in ['A', 'a']:
+    print("You make a healthy meal of sweet oatmeal and fruit. The meal was so filling and energising you gained a heart and 20 energy!\n")
+    inventory['Hearts']+=1
+    inventory['Energy']+=20
+    time.sleep(5)
+if breakfast in ['B', 'b']:
+    print("As you munch down on your omelette you notice something awful. The eggs are rotten and thus you spit it out. You lose 3 hearts because of the life threatening experience.\n")
+    inventory['Hearts']-=3
+    time.sleep(5)
+if breakfast in ['C', 'c']:
+    print("You stoop so low as to eat beans and toast like a monster. The beans themself aren't so bad and for that, you gain 10 energy. However, partaking in such a horrific act as eating bread makes you lose 5 hearts.\n")
+    inventory['Hearts']-=5
+    inventory['Energy']+=10
+    time.sleep(5)
+
+item = input("""After the enjoyment, or lack there of, of breakfast, you return to your room at about 6:40am to prep your bag before leaving. The essentials are packed, your binders, laptop, pens and all. But, there's something missing, essential or not. What do you add to your bag?:
+    A: Hot cocoa
+    B: Reading Material
+    C: Joker Keychain
+    D: Ice Cream\n""")
+while item not in ['A', 'a', 'B', 'b', 'C', 'c', 'D', 'd']:
+    print("Little boring not to take something extra, don't you think?\n")
+    item = input()
+if item in ['A', 'a']:
+    print("You quickly make a thermos of hot cocoa and place it in the side pocket of your book bag.\n")
+    inventory['Hot cocoa']+=1
+    time.sleep(5)
+if item in ['B', 'b']:
+    print("You pick up a magazine from the kitchen counter, finding the cover intriguing. Something to keep your mind working on the ride to school.\n")
+    inventory['Magazines']+=1
+    time.sleep(5)
+if item in ['C', 'c']:
+    print("You clip your Joker keychain to the back of your bag, god you couldn't wait to main him when smash ultimate comes out.\n")
+    inventory['Keychains']+=1
+    time.sleep(5)
+if item in ['D', 'd']:
+    print("Looking outside, you just now notice the blasing sun. It's only 6:40 but it looks like it'll be a sweltering day. You take an ice cream to cool you down before school.\n")
+    inventory['Mango Ice cream']+=1
+    time.sleep(5)
+
+print("After completing your tasks for the morning, you head out the door ready to take on the day.\n")
+print("....................................(ᴗ ͜ʖ ᴗ)travelling(ᴗ ͜ʖ ᴗ)......................................................")
+time.sleep(5)
+
+print(f"""You arrive at school and remember your interactiong with Naomi yesterday. She had dropped her ID and you still have it on you. Pulling it, you head over to the AIT main office to put it in the lost and found.
+DIRK: Hey {name}! What's up!
+{name}: Oh, hey Dirk! Just got here. Actually heading to AIT rn.
+DIRK: Oh why?
+{name}: I bumped into someone yesterday and she dropped her ID. I'm just going to return to the school.
+DIRK: Ah gotcha. I'll tag along.\n""")
+time.sleep(10)
+
+print(f"""MS. WHITE: Hi how may I help you?
+{name}: Well you see one of the students dropped her ID and I just wanted to return it?
+MS. WHITE: No problem, just leave it here and I'll call her down to-\n""")
+time.sleep(10)
+print(f"""Before the woman behind the desk could finish her sentence, the bread in question comes bustling in, once again wearing a suit. Her hair's a little unkempt and she seems slightly panicked.
+NAOMI: EXCUSE ME I LOST MY ID IM SORRY BUT I WAS IN A RUSH AND MY ID I JU-
+{name}: Naomi is it? I think I have what you're looking for. """)
+time.sleep(10)
+print(f"""You present her with the ID, a little scratched from the fall. Her name, SINGH, NAOMI, clear as day.
+NAOMI: YOU'RE A LIFE SAVER THANK YOU GOD I CAN'T SERVER ANOTHER LOP
+{name}: It's no problem, I notice you dropped it and was actually here to return it-
+Naomi cuts you off with a bear hug. She's got a pretty strong grip for being so lanky.""")
+inventory['Journals']-=1
+time.sleep(10)
+
+print("You notice both her worry and relief. You think, maybe she need's something to cheer her up.")
+gift = input("Would you like to offer her ice cream? Y/N\n")
+while gift not in ['Y', 'y', 'N', 'n']:
+    print("Please give some sort of answer\n")
+    gift = input()
+
+if gift in ['Y', 'y']:
+    if inventory['Mango Ice cream']==0:
+        print("Ha even if you wanted to, you have absolutely nothing to offer that she'd like. B I G S A D : (")
+    if inventory['Mango Ice cream']>=1:
+        print("You remember suddenly, that you have some mango ice cream on you. Luckily, you have one of those freezer lunchbags so it was still frozen. You pull it out and offer it to Naomi.\n")
+        print(f"""NAOMI: Yo wait is that Friendly's brand Mango Ice cream! Can I have some??
+        {name}: Of course!""")
+        inventory['Hearts']+=5
+
+if gift in ['N', 'n']:
+    print("You don't offer the ice cream because you're a selfish little goblin. You lose 3 hearts.\n")
+    inventory['Hearts']-=3
+
+time.sleep(10)
+print("Your day was not as quite eventful as you had hope'd it would be but c'est la vie. You hung out with Dirk, Xavier, and Naomi during lunch. You learned alot about her including her love of ghibli movies, her favourite she says is Grave of the Firelies. She's hoping to go into computer programming in her college years and maye create her own horror novel game!")
+time.sleep(6)
+
+print("It's the end of the final period and you're itching to confront you-know-who. As the final bell rings, you blast out of your classroom, bidding your Literature teacher a quick goodbye.\n")
+time.sleep(5)
+print("You arrive at the bussing lanes, searching through the crowd for that special someone. But before you find them, let's review your stats.\n")
+
+i = input("Check out your inventory by pressing 'i'!\n")
+if i == "i":
+    print_inventory()
+date = input("""If you remember well, most items correlate to one of the breads you've met along your journey! The hearts as well, some breads have level of affection that needed to be met. Choose wisely, they will be your prom date for better or worse.
+A: DIRK
+B: NAOMI
+C: XAVIER
+""")
+while date not in ['A', 'a', 'B', 'b', 'C', 'c',]:
+    print("You must pick someone to take, this is a D A T I N G S I M U L A T O R .\n")
+    date = input()
+if date in ['A', 'a']:
+    if inventory['Hot cocoa']>=2:
+        print("You decide to ask out Dirk. Nervous, you walk over to him. He seems rather stunned at first, a blush rising to his bready complexion. He happily accepts and you two plan your night together.\n")
+        time.sleep(5)
+        print("CONGRATS YOU GOT THE GOOD ENDING! YOU AND DIRK HAD A GREAT TIME AT PROM")
+    if inventory['Hot cocoa']<=2:
+        print("You decide to ask out Dirk. Nervous, you walk over to him. Unfortunately, he rejects you. He says he sees you two as simply friends and would like to keep it that way.")
+        time.sleep(10)
+        print("BAD ENDING...wonder where you went wrong?")
+if date in ['B', 'b']:
+    if inventory['Mango Ice cream']>=1:
+        print("You decide to ask out Naomi. Nervous, you walk over to her. She starts blushing and stuttering, breadcrumbs falling from her lips. She mutters out an embarrased but happy yes. Ecstatic, you two decide to wak home together, planning for Saturday ")
+        time.sleep(10)
+        print("CONGRATS YOU GOT THE GOOD ENDING! YOU AND NAOMI HAD A GREAT TIME AT PROM")
+    if inventory['Mango Ice cream']<=1:
+        print("You decide to ask out Naomi. Nervous, you walk over to her. Unfortunately, she rejects you. She says she sees you two as simply friends and would like to keep it that way. She thinks you're taking things too fast :("")
+        time.sleep(10)
+        ("BAD ENDING...wonder where you went wrong?")
+if date in ['C', 'c']:
+    if inventory['Hearts']>=18:
+        print("You decide to ask out Xavier. Nervous, you walk over to him. He's shocked but happily accepts the invite. He seems almost more excited than you are it's entertaining to say the least. None the less, you're relieved he accepted the invitation.")
+        time.sleep(10)
+        print("CONGRATS YOU GOT THE GOOD ENDING! YOU AND XAVIER HAD A GREAT TIME AT PROM")
+    if inventory['Hearts']<=18:
+        print("You decide to ask out Xavier. Nervous, you walk over to him. He sadly smiles and tells you sorry but he only sees you as a friend and would like to keep it that way. He finds you too clingy :(")
+        time.sleep(10)
+        ("BAD ENDING...wonder where you went wrong?")
+
+
+
+
+
+
+
+
+
+
+
+
+\
+
+
+
+
+
+
 
 
